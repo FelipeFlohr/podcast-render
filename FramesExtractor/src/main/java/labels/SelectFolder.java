@@ -43,5 +43,3 @@ public class SelectFolder extends JLabel implements ActionListener {
         }
     }
 }
-
-
