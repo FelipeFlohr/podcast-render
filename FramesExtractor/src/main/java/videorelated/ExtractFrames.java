@@ -16,6 +16,11 @@ import static labels.SelectVideo.videoPath;
 
 public class ExtractFrames {
 
+    /**
+     * Gets the total amount of frames of a video
+     * @return the lenght of the video in frames as integer
+     * @throws FrameGrabber.Exception
+     */
     public static int getAmountOfFrames() throws FrameGrabber.Exception {
         FFmpegFrameGrabber frameGrabber = new FFmpegFrameGrabber(videoPath.getAbsolutePath());
         frameGrabber.start();
@@ -23,6 +28,10 @@ public class ExtractFrames {
         return frameGrabber.getLengthInFrames();
     }
 
+    /**
+     * Separate each frame using the FFmpegFrameGrabber class. Thereafter, saves it into the user's desired folder
+     * @throws FrameGrabber.Exception
+     */
     public static void separateFrames() throws FrameGrabber.Exception {
         FFmpegFrameGrabber frameGrabber = new FFmpegFrameGrabber(videoPath.getAbsolutePath());
         frameGrabber.start();
