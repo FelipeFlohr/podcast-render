@@ -17,7 +17,7 @@ public class SelectFolder extends JLabel implements ActionListener {
         this.mainFrame = mainFrame;
         this.setLayout(new FlowLayout());
 
-        button = new JButton("Select folder to open...");
+        button = new JButton("Select folder to save...");
         button.addActionListener(this);
 
         text = new JTextField(20);
