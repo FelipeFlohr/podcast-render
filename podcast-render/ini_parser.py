@@ -13,11 +13,12 @@ class Parser:
         """
         try:
             f = open(f'{self.file_name}', 'x')
-            f.write('''# ---File Configs---
+            f.write("""# ---File Configs---
 frames_folder = C:\\Users\\Felipe\\Desktop\\Frames # < - String. The absolute path of the folder containing each frame.
-video_path = C:\\Users\\Felipe\\Documents # <- String. The absolute path of the video.
+video_path = C:\\Users\\Felipe\\Documents\\video.mp4 # <- String. The absolute path of the video.
 output_video_name = output.mp4 # <- String. Video's name when it's fully rendered.
-''')
+""")
+            print("config.ini file created")
         except FileExistsError:
             pass
 
@@ -150,4 +151,3 @@ class Parameters(Parser):
 
     def output_video_name(self):
         return self.argument(self.search_parameter("output_video_name"), "str")
-    
