@@ -22,7 +22,7 @@ For Python:
 
 Well, I made a video explaining how to use it. Just click on the picture below, and you'll be directed to the YouTube video.
 
-[![Video](READMEFiles\thumb.png)](https://www.youtube.com/watch?v=qq0Qatx0I54)
+<a href="https://www.youtube.com/watch?v=qq0Qatx0I54"><img src="READMEFiles/thumb.png"></a>
 
 ## FAQ
 
