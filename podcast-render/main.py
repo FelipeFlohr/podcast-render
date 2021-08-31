@@ -5,11 +5,20 @@ from ini_parser import Parameters
 
 class ImageAnalyzer:
     def __init__(self, frames_folder: str, video_file_path: str):
+        """
+        -> Class for analyzing images
+        :param frames_folder: The absolute path to the folder where the frames are located
+        :param video_file_path: The absolute path to the video
+        """
         self.frames_folder = frames_folder
         self.video = video_file_path
 
     # This method is obsolete. Please use the Java Frame Extractor instead
     def separate_frames(self):
+        """
+        -> It will extract every frame of the video and place it on the frames' folder
+        :return: no return
+        """
         video = VideoFileClip(self.video)
         total_amount_of_frames = int(video.fps * video.duration)
         print(f"Total amount of frames: {total_amount_of_frames}")
@@ -22,22 +31,28 @@ class ImageAnalyzer:
             print("Iteration #{} done.".format(i))
 
     def get_total_amount_of_frames(self):
+        """
+        -> Will get the total amount of frames
+        :return: the total amount of frames as integer
+        """
         print("Getting the total amount of frames...")
         total_files = 0
 
         # Counting how many files there is on the folder
-        for i in os.listdir(self.frames_folder):
+        for _ in os.listdir(self.frames_folder):
             total_files += 1
 
         print(f"Total amount of frames = {total_files}")
         return total_files
 
     def generate_casters_timestamps(self, felipe_pos, gabriel_pos):
-        total_files = 0
-
-        # Counting how many files there is on the folder
-        for i in os.listdir(self.frames_folder):
-            total_files += 1
+        """
+        -> Will generate timestamps telling who is speaking in the current frame
+        :param felipe_pos: The XY position of Felipe's green speaking circle on discord
+        :param gabriel_pos: The XY position of Gabriel's green speaking circle on discord
+        :return: will return a list containing the timestamps for each member of the podcast
+        """
+        total_files = self.get_total_amount_of_frames()
 
         casters = list()
 
@@ -74,36 +89,52 @@ class ImageAnalyzer:
 
 class MovieRendering:
     def __init__(self, video_path: str, video_output: str, timestamps, qnt_frames):
+        """
+        -> Class for rendering the video
+        :param video_path: the absolute path to the video
+        :param video_output: already specified on config.ini
+        :param timestamps: the list containing the timestamps for each member of the podcast
+        :param qnt_frames: the total amount of frames
+        """
         self.video_path = video_path
         self.video_output = video_output
         self.timestamps = timestamps
         self.amount_of_frames = qnt_frames
 
     def generate_frames(self):
+        """
+        -> This will generate every frame to be rendered on the final video
+        :return: will return a list of frames
+        """
         print("Generating frames...")
         frames = list()
 
         for i in range(self.amount_of_frames):
             # Both are speaking
             if timestamps[0][i]["speaking"] and timestamps[1][i]["speaking"]:
-                frames.append("podcast-render/files/felipegabriel.png")
+                frames.append("files/felipegabriel.png")
 
             # If just Felipe is speaking
             elif timestamps[0][i]["speaking"]:
-                frames.append("podcast-render/files/felipe.png")
+                frames.append("files/felipe.png")
 
             # If just Gabriel is speaking
             elif timestamps[1][i]["speaking"]:
-                frames.append("podcast-render/files/gabriel.png")
+                frames.append("files/gabriel.png")
 
-            # If nobody if speaking
+            # If nobody is speaking
             else:
-                frames.append("podcast-render/files/blank.png")
+                frames.append("files/blank.png")
 
         print("Frames generated...")
         return frames
 
     def render_movie(self, frames_stamps):
+        """
+        -> Method for rendering the movie
+        :param frames_stamps: list containing each frame
+        :return: no return
+        """
         print("Start video render...")
         video_audio = VideoFileClip(self.video_path)
         audio = video_audio.audio
