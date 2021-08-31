@@ -27,6 +27,7 @@ public class FrameUI extends JFrame {
         this.setSize(500, 200);
         this.setResizable(false);
         this.setTitle("2flps - Frame extractor");
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
 
     }
