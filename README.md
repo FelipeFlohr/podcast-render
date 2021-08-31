@@ -5,7 +5,8 @@
 ## 1. Requirements
 
 - A screen recorder (I would recommend [OBS](https://obsproject.com/welcome))
-- A footage of a discord conversation inside a voice channel
+- [Discord](https://discord.com/)
+- A footage of a Discord conversation inside a voice channel
 - [Java](https://www.java.com/) (for the Frame Extractor)
 - [Python](https://www.python.org/) (for the main script)
 
