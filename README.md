@@ -32,6 +32,6 @@ Well, I made a video explaining how to use it. Just click on the picture below, 
 2. The program is not portable
 - Again, as I said in the video, the deadline of the homework is getting closer, so I decided to "rush" a bit, sacrificing some portability.
 3. I just want to download the Frame Extractor
-- You can download it separated from the other files in my GitHub repository.
+- You can download it separated from the other files [in this GitHub repository](https://github.com/FelipeFlohr/frame-extractor).
 4. "I found a bug" or "I don't know how to use this"
 - You can open an issue ticket here on GitHub or reach me on my e-mail: felipeflohrlol@gmail.com
