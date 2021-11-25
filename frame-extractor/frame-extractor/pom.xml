@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.doisfelps</groupId>
-    <artifactId>FramesExtractor</artifactId>
-    <version>1.0</version>
+    <groupId>com.felipeflohr</groupId>
+    <artifactId>frame-extractor</artifactId>
+    <version>1.1</version>
     <dependencies>
         <dependency>
             <groupId>org.boofcv</groupId>
             <artifactId>boofcv-ffmpeg</artifactId>
-            <version>0.38</version>
+            <version>0.39.1</version>
         </dependency>
     </dependencies>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
 </project>
